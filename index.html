@@ -31,12 +31,12 @@
   <style>
     html { background-color: #020617; }
     body { -webkit-font-smoothing: antialiased; }
-    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #020617; }
-    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: #334155; }
-    
-    /* Suavizado continuo para la fluidez del simulador */
+
+    /* Clase para suavizar todos los movimientos del simulador */
     .smooth-transition {
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -56,192 +56,305 @@
         <a href="#problema" class="hover:text-cyan-400 transition-colors">Problema</a>
         <a href="#metodologia" class="hover:text-cyan-400 transition-colors">Metodología</a>
         <a href="#diseño" class="hover:text-cyan-400 transition-colors">Arquitectura</a>
-        <a href="#simulador" class="text-cyan-400 font-semibold border-b-2 border-cyan-500/40 pb-0.5">Simulador</a>
+        <a href="#simulador" class="hover:text-cyan-400 transition-colors">Simulador</a>
         <a href="#ia" class="hover:text-cyan-400 transition-colors">Uso de IA</a>
         <a href="#conclusiones" class="hover:text-cyan-400 transition-colors">Conclusiones</a>
       </div>
     </div>
   </nav>
 
-  <header class="w-full bg-slate-950 py-10 px-6 border-b border-slate-900 flex flex-col md:flex-row items-center justify-between gap-8 max-w-7xl mx-auto">
-    <div class="flex-shrink-0 bg-slate-900/40 p-3 rounded-full border border-slate-800/40 shadow-inner">
-      <img src="https://utp.ac.pa/documentos/2015/imagen/logo_utp_1_72.png" alt="Logo Universidad Tecnológica de Panamá" class="max-h-24 w-auto object-contain">
+  <header class="w-full bg-slate-950 py-8 px-6 border-b border-slate-900 flex flex-col md:flex-row items-center justify-between gap-6 max-w-7xl mx-auto">
+    <div class="flex-shrink-0 bg-slate-900/40 p-2.5 rounded-full border border-slate-800/40">
+      <img src="https://utp.ac.pa/documentos/2015/imagen/logo_utp_1_72.png" alt="Logo UTP" class="max-h-20 w-auto object-contain">
     </div>
 
     <div class="text-center flex-1">
-      <h1 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight">Universidad Tecnológica de Panamá</h1>
-      <p class="text-lg text-slate-400 font-medium mt-1">Facultad de Ingeniería de Sistemas Computacionales</p>
-      <p class="text-sm text-slate-500 mt-1">Centro Regional de Veraguas | Licenciatura en Ciberseguridad</p>
-      
-      <div class="flex flex-wrap justify-center gap-2 mt-4">
-        <span class="bg-blue-950/50 text-blue-400 text-xs font-semibold px-3 py-1 rounded-full border border-blue-800/40">Ciberseguridad I</span>
-        <span class="bg-slate-900 text-slate-400 text-xs font-semibold px-3 py-1 rounded-full border border-slate-800">Prof. Rafael Cosme</span>
-        <span class="bg-cyan-950/50 text-cyan-400 text-xs font-semibold px-3 py-1 rounded-full border border-cyan-800/40">Proyecto Semestral</span>
+      <h1 class="text-xl md:text-2xl font-bold text-white tracking-wide">Universidad Tecnológica de Panamá</h1>
+      <p class="text-slate-400 font-medium mt-1">Facultad de Ingeniería de Sistemas Computacionales</p>
+      <p class="text-slate-500 text-sm mt-1">Centro Regional de Veraguas | Licenciatura en Ciberseguridad</p>
+      <div class="flex flex-wrap justify-center gap-2 mt-3">
+        <span class="bg-blue-950/50 text-blue-400 text-xs font-semibold px-2.5 py-1 rounded-full border border-blue-800/40">Ciberseguridad I</span>
+        <span class="bg-slate-900 text-slate-400 text-xs font-semibold px-2.5 py-1 rounded-full border border-slate-800">Prof. Rafael Cosme</span>
+        <span class="bg-cyan-950/50 text-cyan-400 text-xs font-semibold px-2.5 py-1 rounded-full border border-cyan-800/40">Proyecto Final</span>
       </div>
     </div>
 
-    <div class="flex-shrink-0 bg-slate-900/40 p-3 rounded-xl border border-slate-800/40 shadow-inner">
-      <img src="https://fisc.utp.ac.pa/sites/default/files/fisc-baja.png" alt="Logo Facultad de Ingeniería de Sistemas Computacionales" class="max-h-24 w-auto object-contain">
+    <div class="flex-shrink-0 bg-slate-900/40 p-2.5 rounded-xl border border-slate-800/40">
+      <img src="https://fisc.utp.ac.pa/sites/default/files/fisc-baja.png" alt="Logo FISC" class="max-h-20 w-auto object-contain">
     </div>
   </header>
 
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
     
-    <div class="lg:col-span-7 space-y-8">
-      
-      <section class="bg-slate-900/50 border border-slate-800/60 rounded-2xl p-6 backdrop-blur-sm">
-        <h2 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
-          <span class="h-2 w-2 rounded-full bg-cyan-400"></span>
-          Proyecto de Investigación y Desarrollo
+    <div class="lg:col-span-4 space-y-8">
+      <section class="bg-slate-900/50 border border-slate-800/60 rounded-2xl p-5 backdrop-blur-sm">
+        <h2 class="text-sm font-bold uppercase tracking-widest text-slate-400 mb-3 flex items-center gap-2">
+          <span class="h-1.5 w-1.5 rounded-full bg-cyan-400"></span> Autores
         </h2>
-        <h3 class="text-lg font-semibold text-cyan-400 leading-snug">
-          Sistema de Alerta Temprana para Inundaciones con Arduino y Sensor Ultrasónico
-        </h3>
-        <p class="text-xs text-slate-500 mt-1 uppercase tracking-wider font-semibold">Autores del Grupo:</p>
-        <div class="grid grid-cols-3 gap-3 mt-2 text-sm text-slate-300 font-medium bg-slate-950/60 p-3 rounded-xl border border-slate-800/40">
-          <div class="flex items-center gap-1.5"><span class="text-cyan-500">•</span> Cristian Figueroa</div>
-          <div class="flex items-center gap-1.5"><span class="text-cyan-500">•</span> Leidy Reyes</div>
-          <div class="flex items-center gap-1.5"><span class="text-cyan-500">•</span> Sahid Ortiz</div>
+        <div class="space-y-2 text-sm text-slate-300 font-medium">
+          <p class="flex items-center gap-2"><span class="text-cyan-500">•</span> Cristian Figueroa</p>
+          <p class="flex items-center gap-2"><span class="text-cyan-500">•</span> Leidy Reyes</p>
+          <p class="flex items-center gap-2"><span class="text-cyan-500">•</span> Sahid Ortiz</p>
         </div>
       </section>
 
-      <section id="problema" class="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-6 space-y-3 scroll-mt-20">
-        <h3 class="text-lg font-bold text-white border-b border-slate-800 pb-2 flex items-center gap-2">
-          <span class="text-slate-500 font-mono">01.</span> Planteamiento del Problema en Panamá
-        </h3>
-        <p class="text-slate-300 text-sm leading-relaxed text-justify">
-          Las inundaciones representan uno de los fenómenos naturales más devastadores en la República de Panamá, impactando severamente la seguridad humana y la estabilidad socioeconómica local. Durante la temporada lluviosa, las comunidades aledañas a ríos, cuencas y quebradas experimentan crecidas repentinas y violentas debido a la saturación pluvial.
-        </p>
-        <p class="text-slate-300 text-sm leading-relaxed text-justify">
-          La ausencia generalizada de infraestructuras tecnológicas accesibles y de bajo costo para el monitoreo hidrológico en tiempo real impide la transmisión oportuna de alertas. Esto priva a las poblaciones vulnerables del margen de tiempo crítico necesario para ejecutar planes de evacuación y resguardar bienes materiales esenciales.
+      <section id="problema" class="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-5 space-y-3 scroll-mt-20">
+        <h3 class="text-base font-bold text-white border-b border-slate-800 pb-2">01. Planteamiento del Problema</h3>
+        <p class="text-slate-400 text-xs leading-relaxed text-justify">
+          Las inundaciones son uno de los fenómenos naturales que ocasionan las mayores pérdidas tanto en vidas humanas como en recursos económicos en Panamá. Las comunidades ubicadas cerca de ríos y quebradas suelen verse afectadas por el incremento repentino del nivel del agua, especialmente durante la temporada lluviosa. La ausencia de sistemas de monitoreo accesibles dificulta la emisión de alertas oportunas.
         </p>
       </section>
 
-      <section id="metodologia" class="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-6 space-y-4 scroll-mt-20">
-        <h3 class="text-lg font-bold text-white border-b border-slate-800 pb-2 flex items-center gap-2">
-          <span class="text-slate-500 font-mono">02.</span> Marco y Fundamentación Metodológica
-        </h3>
-        
-        <div class="space-y-3">
-          <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/50">
-            <h4 class="text-sm font-bold text-cyan-400 flex items-center gap-2">
-              <span class="bg-cyan-500/10 text-cyan-400 text-xs px-2 py-0.5 rounded">Principal</span> 
-              Modelo en V para Desarrollo de Hardware
-            </h4>
-            <p class="text-xs text-slate-400 mt-1 text-justify">
-              Estructura el ciclo de vida del prototipo garantizando la trazabilidad. Las fases de definición de requisitos, diseño conceptual y especificación de arquitectura de hardware se vinculan directamente con sus respectivas etapas de verificación, pruebas funcionales de calibración del sensor ultrasónico y validación operativa final en entornos de simulación avanzada.
-            </p>
-          </div>
-
-          <div class="bg-slate-950/50 p-4 rounded-xl border border-slate-800/50">
-            <h4 class="text-sm font-bold text-emerald-400 flex items-center gap-2">
-              <span class="bg-emerald-500/10 text-emerald-400 text-xs px-2 py-0.5 rounded">Complementaria</span> 
-              Design Thinking (Enfoque Empático)
-            </h4>
-            <p class="text-xs text-slate-400 mt-1 text-justify">
-              Permite centrar el diseño del sistema en la experiencia de las personas de la comunidad. A través de la empatización y definición de dolores, se conceptualizaron alertas altamente visuales y sonoras (LEDs y Zumbador) que evitan la dependencia exclusiva de redes móviles, asegurando una comunicación intuitiva y directa del peligro.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="diseño" class="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-6 space-y-4 scroll-mt-20">
-        <h3 class="text-lg font-bold text-white border-b border-slate-800 pb-2 flex items-center gap-2">
-          <span class="text-slate-500 font-mono">03.</span> Arquitectura Técnica del Prototipo
-        </h3>
-
-        <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800/60 text-center">
-          <p class="text-xs text-slate-500 uppercase tracking-widest font-bold mb-3">Diagrama de Flujo del Hardware</p>
-          <div class="flex flex-col md:flex-row items-center justify-center gap-3 text-xs font-semibold">
-            <div class="bg-slate-900 text-slate-300 p-2.5 rounded-lg border border-slate-700 w-full md:w-auto">
-              Sensor Ultrasónico HC-SR04
-              <span class="block font-normal text-[10px] text-slate-500">(Captura de Eco/Distancia)</span>
-            </div>
-            <div class="text-cyan-500 font-bold rotate-90 md:rotate-0">➔</div>
-            <div class="bg-cyan-950/40 text-cyan-300 p-2.5 rounded-lg border border-cyan-800/50 w-full md:w-auto">
-              Microcontrolador Arduino Uno
-              <span class="block font-normal text-[10px] text-cyan-500">(Procesamiento y Umbrales)</span>
-            </div>
-            <div class="text-cyan-500 font-bold rotate-90 md:rotate-0">➔</div>
-            <div class="bg-slate-900 text-slate-300 p-2.5 rounded-lg border border-slate-700 w-full md:w-auto flex flex-col gap-1">
-              <span>LEDs (Verde/Amarillo/Rojo)</span>
-              <span>Buzzer (Alarma Sonora)</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="overflow-x-auto rounded-xl border border-slate-800">
-          <table class="w-full text-left border-collapse text-xs">
-            <thead>
-              <tr class="bg-slate-900 text-slate-300 border-b border-slate-800 font-bold">
-                <th class="p-3">Componente</th>
-                <th class="p-3">Función en el Circuito</th>
-                <th class="p-3 text-right">Costo Est.</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-900 text-slate-400 bg-slate-950/20">
-              <tr class="hover:bg-slate-900/30">
-                <td class="p-3 font-semibold text-white">Arduino Uno R3</td>
-                <td class="p-3">Unidad central de procesamiento. Ejecuta el firmware analizando distancias y activando periféricos.</td>
-                <td class="p-3 text-right text-slate-300">B/. 12.50</td>
-              </tr>
-              <tr class="hover:bg-slate-900/30">
-                <td class="p-3 font-semibold text-white">Sensor HC-SR04</td>
-                <td class="p-3">Emite ondas de ultrasonido para medir la distancia superficial del río por rebote de eco.</td>
-                <td class="p-3 text-right text-slate-300">B/. 3.00</td>
-              </tr>
-              <tr class="hover:bg-slate-900/30">
-                <td class="p-3 font-semibold text-white">Diodos LEDs (x3)</td>
-                <td class="p-3">Línea de alertas visuales de estado escalonado (Seguro, Precaución, Alerta de Evacuación).</td>
-                <td class="p-3 text-right text-slate-300">B/. 0.60</td>
-              </tr>
-              <tr class="hover:bg-slate-900/30">
-                <td class="p-3 font-semibold text-white">Piezo Buzzer Activo</td>
-                <td class="p-3">Transductor sonoro de advertencia acústica de alta frecuencia al alcanzar el nivel crítico.</td>
-                <td class="p-3 text-right text-slate-300">B/. 1.50</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section id="ia" class="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-6 space-y-3 scroll-mt-20">
-        <h3 class="text-lg font-bold text-white border-b border-slate-800 pb-2 flex items-center gap-2">
-          <span class="text-slate-500 font-mono">04.</span> Uso Responsable de Inteligencia Artificial
-        </h3>
-        <p class="text-slate-300 text-sm leading-relaxed text-justify">
-          En estricto cumplimiento de los lineamientos éticos estipulados en la cátedra, las herramientas de modelos de lenguaje de gran escala (LLMs) se utilizaron exclusivamente como asistentes de soporte técnico aumentado. Su aplicación se enfocó en el análisis predictivo de código fuente para optimizar las rutinas antirrebote (*debouncing*) del sensor en el entorno Wokwi, y en la estructuración modular del maquetado semántico del presente panel informativo.
+      <section id="metodologia" class="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-5 space-y-3 scroll-mt-20">
+        <h3 class="text-base font-bold text-white border-b border-slate-800 pb-2">02. Metodología</h3>
+        <p class="text-slate-400 text-xs leading-relaxed text-justify">
+          El sistema fue desarrollado aplicando el <strong>Modelo en V</strong> como metodología principal y <strong>Design Thinking</strong> como metodología complementaria. El Modelo en V asegura que cada fase de diseño técnico corresponda con una etapa de verificación, mientras que el Design Thinking orientó el proyecto hacia un enfoque empático, centrado en alertar de manera clara y directa a la población vulnerable.
         </p>
       </section>
-
-      <section id="conclusiones" class="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-6 space-y-4 scroll-mt-20">
-        <h3 class="text-lg font-bold text-white border-b border-slate-800 pb-2 flex items-center gap-2">
-          <span class="text-slate-500 font-mono">05.</span> Consideraciones Finales Individuales
-        </h3>
-
-        <div class="flex border-b border-slate-800 text-sm font-medium">
-          <button id="tab-cristian" class="flex-1 py-2 text-center border-b-2 border-cyan-500 text-cyan-400 focus:outline-none transition-all">
-            Cristian Figueroa
-          </button>
-          <button id="tab-leidy" class="flex-1 py-2 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 focus:outline-none transition-all">
-            Leidy Reyes
-          </button>
-          <button id="tab-sahid" class="flex-1 py-2 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 focus:outline-none transition-all">
-            Sahid Ortiz
-          </button>
-        </div>
-
-        <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-800/40 min-h-[110px] text-sm text-slate-300 text-justify italic leading-relaxed">
-          <div id="content-cristian" class="block">
-            "La aplicación práctica de la metodología del Modelo en V nos permitió estructurar un desarrollo de hardware robusto y transparente. Validar cada umbral del sensor ultrasónico mediante pruebas sistemáticas asegura que los mecanismos de detección temprana respondan con fiabilidad ante amenazas reales de desbordamiento."
-          </div>
-          <div id="content-leidy" class="hidden">
-            "Integrar metodologías como Design Thinking en proyectos tecnológicos nos enseña a mirar más allá de la placa de circuitos. La alerta sonora y visual descentralizada responde a una necesidad comunitaria real detectada: proteger la vida humana de forma autónoma e independiente de la conectividad tradicional."
-          </div>
-          <div id="content-sahid" class="hidden">
-            "El desarrollo experimental e híbrido de este prototipo demuestra que la ciberseguridad y la seguridad física convergen en la protección de infraestructuras críticas. Mantener lecturas precisas, libres de ruidos en la señal pluvial, es el pilar fundamental para mitigar riesgos en zonas vulnerables de Panamá."
-          </div>
-        </div>
-      </section>
-
     </div>
+
+    <div id="simulador" class="lg:col-span-5 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 backdrop-blur-md shadow-2xl space-y-6 scroll-mt-20">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xs font-bold tracking-widest text-slate-400 uppercase flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-cyan-500 animate-pulse"></span>
+          Simulador en Tiempo Real
+        </h3>
+        <button id="autoBtn" aria-pressed="false" class="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-md border border-slate-700 bg-slate-950 hover:bg-slate-900 text-slate-400 transition-all select-none">
+          <span id="autoIcon">▶</span> <span id="autoLabel">Auto</span>
+        </button>
+      </div>
+
+      <div id="statusCard" class="smooth-transition p-4 rounded-xl border text-center shadow-lg bg-emerald-950/20 border-emerald-800/50 text-emerald-400">
+        <h4 id="statusText" class="text-lg font-bold tracking-wide">ESTADO: NORMAL</h4>
+        <p id="statusDesc" class="text-xs mt-1 opacity-90">Nivel de agua seguro. Monitoreo estable activo.</p>
+      </div>
+
+      <div class="grid grid-cols-12 gap-4 items-center">
+        <div class="col-span-8 flex flex-col gap-2">
+          <label for="waterSlider" class="text-xs font-bold text-slate-400 flex justify-between">
+            <span>Lectura del Sensor:</span>
+            <span id="distanceLabel" class="font-mono text-cyan-400 font-bold">160 cm</span>
+          </label>
+          <input type="range" id="waterSlider" min="10" max="200" value="160" class="w-full accent-cyan-500 bg-slate-950 h-2 rounded-lg cursor-pointer border border-slate-800">
+          <div class="flex justify-between text-[10px] text-slate-600 font-bold">
+            <span>0cm (Desborde)</span>
+            <span>200cm (Vacio)</span>
+          </div>
+        </div>
+
+        <div class="col-span-4 bg-slate-950 h-28 rounded-xl border border-slate-800 p-1 relative flex items-end overflow-hidden shadow-inner">
+          <div id="waterBar" class="smooth-transition w-full bg-gradient-to-t from-cyan-600 to-blue-500 rounded-lg shadow-lg relative" style="height: 20%;">
+            <div class="absolute top-0 left-0 w-full h-0.5 bg-white/30 animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-950 rounded-xl border border-slate-800 p-3">
+        <div class="h-40 relative">
+          <canvas id="historyChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:col-span-3 space-y-8">
+      <section id="diseño" class="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-5 space-y-3 scroll-mt-20">
+        <h3 class="text-base font-bold text-white border-b border-slate-800 pb-2">03. Componentes</h3>
+        <div class="text-xs space-y-2 text-slate-400">
+          <p><strong class="text-slate-200">Arduino Uno R3:</strong> Procesador central del sistema.</p>
+          <p><strong class="text-slate-200">Sensor HC-SR04:</strong> Mide la distancia por rebote de eco ultrasónico.</p>
+          <p><strong class="text-slate-200">LEDs e Hilos Visuales:</strong> Alertas escalonadas por colores.</p>
+          <p><strong class="text-slate-200">Piezo Buzzer:</strong> Alarma acústica para el estado crítico.</p>
+        </div>
+      </section>
+
+      <section id="ia" class="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-5 space-y-2 scroll-mt-20">
+        <h3 class="text-base font-bold text-white border-b border-slate-800 pb-2">04. Uso de IA</h3>
+        <p class="text-slate-400 text-xs leading-relaxed text-justify">
+          Se utilizaron herramientas de IA de forma responsable y ética como asistentes para el refinamiento del código del firmware en Wokwi y el modelado del diseño modular de esta interfaz de divulgación.
+        </p>
+      </section>
+
+      <section id="conclusiones" class="bg-slate-900/40 border border-slate-800/50 rounded-2xl p-5 space-y-3 scroll-mt-20">
+        <h3 class="text-base font-bold text-white border-b border-slate-800 pb-2">05. Conclusiones</h3>
+        <div class="flex border-b border-slate-800 text-xs font-medium">
+          <button id="tab-cristian" class="flex-1 py-1 text-center border-b-2 border-cyan-500 text-cyan-400 focus:outline-none">Cristian</button>
+          <button id="tab-leidy" class="flex-1 py-1 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 focus:outline-none">Leidy</button>
+          <button id="tab-sahid" class="flex-1 py-1 text-center border-b-2 border-transparent text-slate-400 hover:text-slate-200 focus:outline-none">Sahid</button>
+        </div>
+        <div class="bg-slate-950/40 p-3 rounded-lg text-xs text-slate-400 italic text-justify min-h-[90px]">
+          <div id="content-cristian" class="block">"El Modelo en V garantiza que cada requisito técnico del prototipo esté respaldado por pruebas de calibración eficientes."</div>
+          <div id="content-leidy" class="hidden">"Design Thinking nos permitió priorizar alertas físicas directas para proteger de forma autónoma a la comunidad."</div>
+          <div id="content-sahid" class="hidden">"Mantener lecturas estables y libres de ruidos en la señal del sensor es la clave para evitar falsos positivos críticos."</div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="bg-slate-950 border-t border-slate-900 py-4 mt-6 text-center text-[11px] text-slate-600">
+    <p>© 2026 Universidad Tecnológica de Panamá | Ciberseguridad I - Centro Regional de Veraguas</p>
+  </footer>
+
+  <script>
+    const slider = document.getElementById('waterSlider');
+    const distanceLabel = document.getElementById('distanceLabel');
+    const waterBar = document.getElementById('waterBar');
+    const statusCard = document.getElementById('statusCard');
+    const statusText = document.getElementById('statusText');
+    const statusDesc = document.getElementById('statusDesc');
+
+    // Lógica del Buzzer con Audio Context Nativo
+    let audioCtx = null;
+    let buzzerInterval = null;
+    function ensureAudio() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+    
+    function startBuzzer() {
+      ensureAudio();
+      if (buzzerInterval) return;
+      buzzerInterval = setInterval(() => {
+        if (!audioCtx || audioCtx.state === 'suspended') return;
+        let osc = audioCtx.createOscillator();
+        let gain = audioCtx.createGain();
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(2500, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.06);
+      }, 300);
+    }
+    function stopBuzzer() { if (buzzerInterval) { clearInterval(buzzerInterval); buzzerInterval = null; } }
+
+    // Gráfica de Chart.js fluida
+    const ctx = document.getElementById('historyChart').getContext('2d');
+    const MAX_POINTS = 20;
+    const historyChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: Array(MAX_POINTS).fill(''),
+        datasets: [{
+          data: Array(MAX_POINTS).fill(160),
+          borderColor: '#10b981',
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: true,
+          backgroundColor: 'rgba(0, 163, 224, 0.02)',
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        animation: { duration: 150, easing: 'linear' }, // Duración corta para suavizar el deslizamiento continuo
+        scales: {
+          x: { display: false },
+          y: { min: 0, max: 200, reverse: true, grid: { color: '#1e293b' }, ticks: { color: '#475569', font: { size: 9 } } }
+        }
+      }
+    });
+
+    function pushPoint(val) {
+      historyChart.data.datasets[0].data.shift();
+      historyChart.data.datasets[0].data.push(val);
+      if (val <= 40) historyChart.data.datasets[0].borderColor = '#ef4444';
+      else if (val <= 100) historyChart.data.datasets[0].borderColor = '#f5a623';
+      else historyChart.data.datasets[0].borderColor = '#10b981';
+      historyChart.update('none'); // Actualización en plano continuo para evitar tirones
+    }
+
+    // Actualización de Estados e Interfaz
+    function applyState(distance) {
+      distanceLabel.textContent = `${distance} cm`;
+      const pct = Math.max(0, Math.min(100, ((200 - distance) / 190) * 100));
+      waterBar.style.height = `${pct}%`;
+
+      if (distance <= 40) {
+        statusCard.className = "smooth-transition p-4 rounded-xl border text-center shadow-lg bg-red-950/40 border-red-700/60 text-red-400 animate-pulse font-bold";
+        statusText.textContent = "ALERTA CRÍTICA: PELIGRO";
+        statusDesc.textContent = "¡Caudal desbordado! Alarma acústica encendida. Desplegar protocolos de evacuación.";
+        startBuzzer();
+      } else if (distance <= 100) {
+        statusCard.className = "smooth-transition p-4 rounded-xl border text-center shadow-lg bg-amber-950/25 border-amber-700/50 text-amber-400 font-semibold";
+        statusText.textContent = "ALERTA AMARILLA: PRECAUCIÓN";
+        statusDesc.textContent = "Crecida detectada por el sensor ultrasónico. Monitoreo intensivo continuo.";
+        stopBuzzer();
+      } else {
+        statusCard.className = "smooth-transition p-4 rounded-xl border text-center shadow-lg bg-emerald-950/20 border-emerald-800/50 text-emerald-400";
+        statusText.textContent = "ESTADO: NORMAL";
+        statusDesc.textContent = "Nivel de agua seguro. Monitoreo estable activo.";
+        stopBuzzer();
+      }
+    }
+
+    // Enlace continuo con evento 'input'
+    slider.addEventListener('input', function() {
+      const val = parseInt(this.value, 10);
+      applyState(val);
+      pushPoint(val);
+    });
+
+    // Motor Automático
+    const autoBtn = document.getElementById('autoBtn');
+    const autoIcon = document.getElementById('autoIcon');
+    const autoLabel = document.getElementById('autoLabel');
+    let autoTimer = null;
+    let autoValue = 160;
+    let autoDir = -1;
+
+    function autoStep() {
+      autoValue += autoDir * 3;
+      if (autoValue <= 15) { autoValue = 15; autoDir = 1; }
+      else if (autoValue >= 195) { autoValue = 195; autoDir = -1; }
+      slider.value = autoValue;
+      applyState(autoValue);
+      pushPoint(autoValue);
+    }
+
+    autoBtn.addEventListener('click', function() {
+      if (autoTimer) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+        autoBtn.classList.remove('border-cyan-500/50', 'text-cyan-400', 'bg-slate-900');
+        autoIcon.textContent = '▶'; autoLabel.textContent = 'Auto';
+      } else {
+        ensureAudio();
+        autoValue = parseInt(slider.value, 10);
+        autoTimer = setInterval(autoStep, 50); // Intervalo de refresco corto de 50ms para fluidez impecable
+        autoBtn.classList.add('border-cyan-500/50', 'text-cyan-400', 'bg-slate-900');
+        autoIcon.textContent = '⏸'; autoLabel.textContent = 'Pausar';
+      }
+    });
+
+    slider.addEventListener('mousedown', () => { if(autoTimer) autoBtn.click(); });
+    slider.addEventListener('touchstart', () => { if(autoTimer) autoBtn.click(); });
+
+    // Sistema de Pestañas
+    const tabs = {
+      cristian: { btn: document.getElementById('tab-cristian'), content: document.getElementById('content-cristian') },
+      leidy: { btn: document.getElementById('tab-leidy'), content: document.getElementById('content-leidy') },
+      sahid: { btn: document.getElementById('tab-sahid'), content: document.getElementById('content-sahid') }
+    };
+    function switchTab(activeKey) {
+      Object.keys(tabs).forEach(key => {
+        if (key === activeKey) {
+          tabs[key].btn.classList.add('border-cyan-500', 'text-cyan-400');
+          tabs[key].btn.classList.remove('border-transparent', 'text-slate-400');
+          tabs[key].content.classList.replace('hidden', 'block');
+        } else {
+          tabs[key].btn.classList.remove('border-cyan-500', 'text-cyan-400');
+          tabs[key].btn.classList.add('border-transparent', 'text-slate-400');
+          tabs[key].content.classList.replace('block', 'hidden');
+        }
+      });
+    }
+    tabs.cristian.btn.addEventListener('click', () => switchTab('cristian'));
+    tabs.leidy.btn.addEventListener('click', () => switchTab('leidy'));
+    tabs.sahid.btn.addEventListener('click', () => switchTab('sahid'));
+
+    // Arranque Inicial seguro
+    applyState(160);
+  </script>
+</body>
+</html>
